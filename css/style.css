@@ -1,0 +1,94 @@
+:root {
+    --main-padding: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.6fr 3fr 4fr 1.5fr 3fr;
+    grid-template-areas:
+    "nav nav nav"
+    "header header header"
+    "feature1 feature2 feature3"
+    "signup signup signup"
+    "content1 content1 content1"
+}
+
+nav {
+    background: rgb(46, 46, 235);
+    padding: var(--main-padding);
+    grid-area: nav;
+}
+
+header {
+    background: rgb(104, 183, 236);
+    padding: var(--main-padding);
+    grid-area: header;
+}
+
+#feature1 {
+    background: rgb(223, 148, 86);
+    padding: var(--main-padding);
+    grid-area: feature1;
+}
+
+#feature2 {
+    background: rgb(130, 100, 199);
+    padding: var(--main-padding);
+    grid-area: feature2;
+}
+
+#feature3 {
+    background: rgb(219, 99, 95);
+    padding: var(--main-padding);
+    grid-area: feature3;
+}
+
+#signup {
+    background: rgb(29, 139, 212);
+    padding: var(--main-padding);
+    grid-area: signup;
+}
+
+#content1 {
+    padding: var(--main-padding);
+    grid-area: content1;
+}
+
+@media (max-width: 768px) { /* I-Pad */ 
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.6fr 2fr 3fr 2fr 2fr;
+        grid-template-areas:
+        "nav nav"
+        "header header"
+        "content1 content1"
+        "signup feature1"
+        "feature2 feature3"
+    }
+}
+
+@media (max-width: 550px) { /* Regular Phone */
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.6fr 2fr 4fr 2fr 2fr 2fr 2fr;
+        grid-template-areas:
+            "nav"
+            "header"
+            "content1"
+            "signup"
+            "feature1"
+            "feature3"
+            "feature2"
+    }
+}
